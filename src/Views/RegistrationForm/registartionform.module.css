@@ -78,6 +78,14 @@
     body {
       background-color: lightblue;
     }
+
+    .form{
+      padding: 5px;
+    }
+
+    .multiSteps > li:after {
+      width: 90%;
+    }
   }
   
   /* Portrait */

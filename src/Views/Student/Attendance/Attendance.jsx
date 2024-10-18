@@ -50,12 +50,14 @@ const Attendance = () => {
     }
   };
 
-  const updateStudent = (name, days) => {
+  let updateStudent = (name, days) => {
     const updatedStudents = students.map(student =>
       student.name === name ? { ...student, days } : student
     );
     setStudents(updatedStudents);
   };
+
+
 
   const deleteStudent = (name) => {
     const updatedStudents = students.filter(student => student.name !== name);
@@ -65,6 +67,7 @@ const Attendance = () => {
   const deleteAll = () => {
     setStudents([]);
   };
+
 
   return (
     <div className={styles.container}>
@@ -151,7 +154,7 @@ const Table = ({ students, updateStudent, deleteStudent, daysInMonth, currentMon
       }
       return student;
     });
-      console.log(updatedStudents)
+    console.log(updatedStudents)
   };
 
   return (

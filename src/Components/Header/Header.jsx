@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./header.module.css";
 
 import { Link } from "react-router-dom";
@@ -11,15 +11,14 @@ import { FaBarsStaggered } from "react-icons/fa6";
 
 import { useDispatch, useSelector } from "react-redux";
 import { sidebarData, toggleSidebar } from "../../Store/Slices/sidebarToggleSlice";
+import { navbarData, toggleNotification, toggleProfile } from "../../Store/Slices/navbarToggleSlice";
 
 const Header = () => {
 
   const dispatch = useDispatch();
 
   const { showSidebar } = useSelector(sidebarData);
-
-  const [showNotification, setShowNotification] = useState(false);
-  const [showProfile, setShowProfile] = useState(false);
+  const { showProfile, showNotification } = useSelector(navbarData);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isDesktop = useMediaQuery({ minWidth: 768 });
@@ -51,7 +50,7 @@ const Header = () => {
             <div className={styles.navbarIcons}>
               <AiOutlineArrowsAlt />
             </div>
-            <div className={`${styles.navbarIcons} ${styles.notification}`} onClick={() => setShowNotification(prevState => !prevState)}>
+            <div className={`${styles.navbarIcons} ${styles.notification}`} onClick={() => dispatch(toggleNotification())}>
               <FaRegBell /> <span className={styles.notificationCount}>10</span>
             </div>
           </>
@@ -88,7 +87,7 @@ const Header = () => {
                   </div>
                   <div
                     className={`${styles.navbarIcons} ${styles.notification}`}
-                    onClick={() => setShowNotification(prevState => !prevState)}
+                    onClick={() => dispatch(toggleNotification())}
                   >
                     <FaRegBell />{" "}
                     <span className={styles.notificationCount}>10</span>
@@ -111,7 +110,7 @@ const Header = () => {
         </div>
 
         {/* User Avathar */}
-        <button className={styles.navbarAvatar} onClick={() => setShowProfile(prevState => !prevState)}>
+        <button className={styles.navbarAvatar} onClick={() => dispatch(toggleProfile())}>
           <img
             src="https://cdn-icons-png.freepik.com/512/145/145974.png"
             width={25}

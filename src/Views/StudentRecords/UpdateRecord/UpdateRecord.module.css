@@ -1,76 +1,65 @@
 .updateRecordContainer {
-  padding: 30px;
-  background-color: #f0f4f7;
-  border-radius: 12px;
-  max-width: 700px;
-  margin: 30px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  font-size: 28px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
-  font-weight: bold;
-}
-
-.subTitle {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #444;
-  font-weight: normal;
 }
 
 .form {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
-
-.updateForm {
-  margin-top: 30px;
+  flex-direction: column;
 }
 
 .formGroup {
-  flex-grow: 1;
-  margin-right: 15px;
+  margin-bottom: 20px;
   position: relative;
 }
 
 .label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #555;
+  font-size: 16px;
   font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .input {
   width: 100%;
-  padding: 10px 15px;
+  padding: 12px;
   font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
-  transition: border-color 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
 }
 
 .input:focus {
   border-color: #007bff;
-  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
 .suggestionsList {
   position: absolute;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  max-height: 150px;
-  overflow-y: auto;
-  width: 100%;
-  top: 60px;
+  top: 100%;
   left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 
@@ -78,52 +67,75 @@
   padding: 10px;
   cursor: pointer;
   font-size: 16px;
-  color: #555;
 }
 
 .suggestionItem:hover {
-  background-color: #f1f1f1;
+  background-color: #f0f0f0;
 }
 
 .searchButton, .updateButton {
-  padding: 12px 20px;
+  padding: 12px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .searchButton:hover, .updateButton:hover {
   background-color: #0056b3;
 }
 
-.searchButton {
-  margin-left: 10px;
+.subTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
-.updateButton {
-  display: block;
-  margin: 20px auto;
-  width: 100%;
-}
-
-/* Media query for mobile responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .form, .updateForm {
-    flex-direction: column;
+  .updateRecordContainer {
+    padding: 15px;
   }
 
-  .formGroup {
-    margin-right: 0;
-    margin-bottom: 15px;
+  .title {
+    font-size: 20px;
   }
 
-  .searchButton {
-    width: 100%;
-    margin-left: 0;
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .searchButton, .updateButton {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .subTitle {
+    font-size: 16px;
+  }
+
+  .input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .searchButton, .updateButton {
+    padding: 8px;
+    font-size: 14px;
   }
 }

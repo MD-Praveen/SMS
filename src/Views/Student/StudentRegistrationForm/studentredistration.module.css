@@ -38,3 +38,11 @@
     border-radius: 8px;
   }
   
+
+  @media (max-width: 600px){
+    
+    .studentRegistrationContainer{
+      padding: 5px 10px;
+    }
+  
+  }

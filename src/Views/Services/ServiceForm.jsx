@@ -33,7 +33,7 @@ const ServiceForm = () => {
     <div id={styles.servicesForm}>
       <form onSubmit={handleSubmit}>
         <div className={styles.formData}>
-            <label htmlFor="service">Service Type:</label> <br />
+            <label htmlFor="service">Service Type:</label>
             <select 
                 id="service" 
                 name="service" 
@@ -53,7 +53,7 @@ const ServiceForm = () => {
         </div>
 
        <div className={styles.formData}>
-        <label htmlFor="user">User Type:</label> <br />
+        <label htmlFor="user">User Type:</label>
             <input 
             list="userTypes"
             id="user" 
@@ -72,7 +72,7 @@ const ServiceForm = () => {
 
 
         <div className={styles.formData}>
-            <label htmlFor="actions">Actions:</label> <br />
+            <label htmlFor="actions">Actions:</label>
             <input 
             list="actionTypes" 
             id="actions" 

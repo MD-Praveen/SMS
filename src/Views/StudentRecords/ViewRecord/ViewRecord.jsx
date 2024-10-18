@@ -27,16 +27,16 @@ const ViewRecords = () => {
           <thead>
             <tr>
               <th className={styles.header}>Name</th>
-              <th className={styles.header}>Class</th>
-              <th className={styles.header}>Section</th>
+              <th className={styles.header} style={{textAlign: "center"}}>Class</th>
+              <th className={styles.header} style={{textAlign: "center"}}>Section</th>
             </tr>
           </thead>
           <tbody>
             {records.map((record, index) => (
               <tr key={index} className={styles.row}>
                 <td className={styles.cell}>{record.name}</td>
-                <td className={styles.cell}>{record.class}</td>
-                <td className={styles.cell}>{record.section}</td>
+                <td className={styles.cell} style={{textAlign: "center"}}>{record.class}</td>
+                <td className={styles.cell} style={{textAlign: "center"}}>{record.section}</td>
               </tr>
             ))}
           </tbody>
